@@ -1,15 +1,14 @@
 import math;import heapq;import string;from collections import deque;from bisect import bisect,bisect_left,bisect_right,insort;import sys;input=sys.stdin.readline;S=lambda:input();I=lambda:int(S());M=lambda:map(int,S().split());L=lambda:list(M());H=1000000000+7
 for _ in range(I()):
-	n,k=M()
-	s=0
-	if n%2==1:
-		s=pow(pow(2,n-1,H)+1,k,H)
-	else:
-		d=(pow(2,n-1,H)-1)%H
-		p=(pow(2,n,H)*pow(d,-1,H))%H
-		z=pow(d,k-1,H)
-		m=pow(p,k,H)-1
-		q=p-1
-		s=(m%H)*(pow(q,-1,H))*(z)
-		s+=pow(d,k,H)
-	print(s%H)
+	n=I()
+	l=L()
+	p=0
+	cur=max(l)
+	while max(l)!=min(l):
+		p=cur
+		i=min(l.index(max(l)),l.index(min(l)))
+		j=max(l.index(max(l)),l.index(min(l)))
+		for k in range(j-i+1):
+			l[i+k]=l[j-k]&l[i+k]
+		cur=max(l)
+	print(max(l))
