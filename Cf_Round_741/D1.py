@@ -2,17 +2,23 @@ import math;import heapq;import string;from collections import deque;from bisect
 for _ in range(I()):
 	n,q=M()
 	s=S()
-	a=[]
+	a=[0]*n
 	for i in range(n):
 		if (s[i]=='+' and i%2==0) or (s[i]=='-' and i%2==1):
 			a[i]=1
 		else:
 			a[i]=-1
-	dp=[0]*n
+	dp=[0]*(n+1)
 	for i in range(n):
-		dp[i]=dp[i-1]+a[i]
+		dp[i+1]=dp[i]+a[i]
 	for i in range(q):
 		l,r=M()
-		l-=1;r-=1
-		
+		if dp[r]-dp[l-1]==0:
+			print(0)
+		elif (r-l+1)%2==1:
+			print(1)
+		else:
+			print(2)
+
+
 
