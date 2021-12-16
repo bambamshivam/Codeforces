@@ -2,7 +2,7 @@ import math,sys;input=sys.stdin.readline;S=lambda:input().rstrip();I=lambda:int(
 
 x,y=M()
 s=set();s.add(x);f=0
-for i in range(30):
+for i in range(60):
 	new_s=set()
 	for ele in s:
 		if ele==y:f=1;break
