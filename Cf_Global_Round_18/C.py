@@ -1,12 +1,12 @@
 import math,sys;input=sys.stdin.readline;S=lambda:input().rstrip();I=lambda:int(S());M=lambda:map(int,S().split());L=lambda:list(M());mod1=1000000007;mod2=998244353
 
 for _ in range(I()):
-	l,r=M();ans=1000000
-	def f(l,t):
-		a=l//t
-		if a%2==0:b=(l)%t + (a//2)*t
-		else:b=(a//2 +1)*t
-		return b
-	for i in range(18):
-		t=1<<i;ans=min(ans,f(r+1,t)-f(l,t))
+	n=I();a=S();b=S()
+	p=a.count('1');q=b.count('1');c=ans=0
+	for i in range(n):c+=a[i]!=b[i]
+	if p==q:
+		if n-p+1==q:ans=min(c,n-c)
+		else:ans=c
+	elif n-p+1==q:ans=n-c
+	else:ans=-1
 	print(ans)
