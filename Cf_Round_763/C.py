@@ -15,5 +15,4 @@ for _ in range(I()):
 			ans=max(m,ans);l=m+1
 		else:
 			r=m-1
-		#print(b,m,l,r,ans,f)
 	print(ans)
