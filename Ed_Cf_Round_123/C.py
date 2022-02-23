@@ -5,12 +5,10 @@ for _ in range(I()):
 	for i in range(n):p[i+1]=p[i]+a[i]
 	for i in range(1,n+1):
 		m=-math.inf
-		for j in range(n-i+1):
-			m=max(m,p[j+i]-p[j])
+		for j in range(n-i+1):m=max(m,p[j+i]-p[j])
 		l.append(m)
 	for i in range(n+1):
 		m=-math.inf
-		for j in range(n+1):
-			m=max(m,min(j,i)*x+l[j])
+		for j in range(n+1):m=max(m,min(j,i)*x+l[j])
 		ans.append(m)
 	print(*ans)
