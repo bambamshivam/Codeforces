@@ -1,0 +1,5 @@
+import math,sys;input=sys.stdin.readline;S=lambda:input().rstrip();I=lambda:int(S());M=lambda:map(int,S().split());L=lambda:list(M());mod1=1000000007;mod2=998244353
+for _ in range(I()):
+    s=S()
+    if len(s)==1 or 'aba' in s or 'bab' in s or s[0]!=s[1] or s[-1]!=s[-2]:print("NO");continue
+    print("YES")
