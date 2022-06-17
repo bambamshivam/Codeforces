@@ -2,7 +2,7 @@ import math,sys;input=sys.stdin.readline;S=lambda:input().rstrip();I=lambda:int(
 from collections import defaultdict
 for _ in range(I()):
     n=I();a=L();d=defaultdict(list);m=0;p=q=r=0
-    for i in range(n):d[a[i]].append(i)
+    for i in range(n):d[str(a[i])].append(i)
     for t in d:
         l=d[t]
         i=j=0;n1=len(l)
