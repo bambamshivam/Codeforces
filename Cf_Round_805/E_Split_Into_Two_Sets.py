@@ -3,8 +3,10 @@ from collections import defaultdict
 for _ in range(I()):
     n=I();d={};f=0;l=[];s1=set()
     for i in range(n):
-        p,q=M();l.append([p,q]);s1.add(p);s1.add(q)
+        p,q=M();l.append([p,q]);s1.add(str(p));s1.add(str(q))
         if p==q:f=1
+        p=str(p)
+        q=str(q)
         d[p]=d.get(p,0)+1
         d[q]=d.get(q,0)+1
     for i in d:
@@ -13,8 +15,8 @@ for _ in range(I()):
     s=set()
     adj=defaultdict(set)
     for i in l:
-        adj[i[0]].add(i[1])
-        adj[i[1]].add(i[0])
+        adj[str(i[0])].add(str(i[1]))
+        adj[str(i[1])].add(str(i[0]))
     for i in s1:
         if i in s:continue
         j=i;c=0
